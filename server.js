@@ -4,6 +4,11 @@ const db = require('./db')
 const bodyParser=require('body-parser')
 const Person=require('./models/person')
 const MenuItem=require('./models/MenuItem')
+require('dotenv').config();
+
+const PORT=process.env.PORT||3000;
+
+
 app.use(bodyParser.json())
 
 
@@ -20,5 +25,4 @@ app.use('/menu',menuroutes)
 
 
 
-
-app.listen(3000,()=>{console.log("server started")} )
+app.listen(PORT,()=>{console.log("server started")} )
